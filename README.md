@@ -18,7 +18,7 @@ fun <T> Call<T>.waiting(): Single<Response<T>> = Single.create {single ->
 ```
 
 ## 2. CustomRecyclerViewLikeViewPager
-```
+```java
 import android.content.Context;
 import android.graphics.PointF;
 import android.os.Build;
@@ -459,7 +459,7 @@ public class RecyclerViewPager extends RecyclerView
  No newline at end of file
 ```
 **ViewUtilClass**
-```
+```java
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
