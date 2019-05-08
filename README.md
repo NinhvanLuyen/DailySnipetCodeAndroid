@@ -11,6 +11,10 @@ In addition, if your app is installed on a device running Android 9 or higher, s
 - Begging with Android 8 , the system imposes additional restrictions on manifest declared receiver (-- nếu tagget version từ android version 8, hệ thống sẽ hạn chế(không cho phép) việc khai báo Broadcast receiver  trong manifest. Require regist and listent Broadcast Receiver trong Context() và phải unregist khi không còn sử dung để tránh Memory leak).
 
 
+## Kotlin note
+- Differences **val** and **const**:
+**const** are compile time constants. Meaning that their value has to be assigned during ** **compile time__, unlike **vals**, where it can be done at **runtime**. This means, that consts can never be assigned to a function or any class constructor, but only to a String or primitive.
+
 
 ## SnipetCode
 
