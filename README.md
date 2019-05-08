@@ -1,6 +1,20 @@
 # DailySnipetCodeAndroid
 
-## 1.AdapterRetrofit with RXJava
+## Note Android news version 
+### Broadcast Receiver
+* Android 9:*
+- Beginning with Android 9 (API level 28), The NETWORK_STATE_CHANGED_ACTION broadcast doesn't receive information about the *user's location* or personally identifiable data.
+
+In addition, if your app is installed on a device running Android 9 or higher, system broadcasts from Wi-Fi don't contain SSIDs, BSSIDs, connection information, or scan results. To get this information, call getConnectionInfo() instead.
+
+* Android 8:*
+- Begging with Android 8 , the system imposes additional restrictions on manifest declared receiver (-- nếu tagget version từ android version 8, hệ thống sẽ hạn chế(không cho phép) việc khai báo Broadcast receiver  trong manifest. Require regist and listent Broadcast Receiver trong Context() và phải unregist khi không còn sử dung để tránh Memory leak).
+
+
+
+## SnipetCode
+
+### 1.AdapterRetrofit with RXJava
 ```kotlin
 fun <T> Call<T>.waiting(): Single<Response<T>> = Single.create {single ->
 
@@ -17,7 +31,7 @@ fun <T> Call<T>.waiting(): Single<Response<T>> = Single.create {single ->
 }
 ```
 
-## 2. CustomRecyclerViewLikeViewPager
+### 2. CustomRecyclerViewLikeViewPager
 ```java
 import android.content.Context;
 import android.graphics.PointF;
