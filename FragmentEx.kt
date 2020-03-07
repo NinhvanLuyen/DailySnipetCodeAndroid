@@ -1,9 +1,12 @@
    //Handle add Fragment callback resuult
+
+    //We using array to save list callback with key:requestCode and value: is function callback 
     private val handlerArray: SparseArray<(resultCode: Int, data: Intent?) -> Unit> = SparseArray()
 
-    protected fun Fragment.startForResult(fragment: Fragment, requestCode: Int,
+    //Everytime we start a fragment we need add function callback to handlerArray
+    protected fun Fragment.startForResult(areaShowFragment:Int ,fragment: Fragment, requestCode: Int,
                                           resultCallBack: (resultCode: Int, data: Intent?) -> Unit):(resultCode:Int,data:Intent?)->Unit {
-        showDialogWithRequest(fragment, requestCode)
+        addFragmentForResult(fragment, requestCode,areaShowFragment)
         handlerArray.append(requestCode, resultCallBack)
         return resultCallBack
     }
@@ -18,12 +21,4 @@
                                        resultCode: Int, data: Intent?) {
         handlerArray.get(requestCode)?.invoke(resultCode, data)
 
-    }
-    protected infix fun Int.isOK(function: ()->Unit){
-            if (this == Activity.RESULT_OK)
-                function.invoke()
-    }
-    protected infix fun Int.isCancel(function: ()->Unit){
-            if (this == Activity.RESULT_CANCELED)
-                function.invoke()
     }
